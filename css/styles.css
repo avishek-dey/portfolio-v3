@@ -1,0 +1,694 @@
+/* font file */
+@font-face {
+    font-family: 'Manifest';
+    src: url(/Font/Mafinest.otf);
+}
+  @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;500;600;700&family=Oswald:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+
+/* Css boilerplates */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+}
+
+/* variables */
+:root{
+    --purple: 163, 91, 254;
+    --yellow: 255, 210, 157;
+    --pink: 254, 111, 248;
+    --orange: 255, 158, 123;
+    
+    --nav-bg:#ffffff91;
+    --accent: #FF7871;
+    --border:2px solid #E4E4E4;
+    --background-color: #F2F2F2;
+    --card-background-color: #FFFFFF;
+    --text-color: #242424;
+    --text-color-p: #838383;
+    --font: 'Inter Tight', sans-serif;
+    --secff: 'Space Grotesk', sans-serif; 
+    --manif: 'Manifest'; 
+    --oswald: 'Oswald', sans-serif; 
+}
+
+/* Set the custom text selection color */
+::selection {
+    background-color: #eca202; /* Replace this with your desired color */
+    color: var(--text-color); /* Replace this with the text color you want for the selected text */
+}  
+
+
+body.dark-mode {
+    --nav-bg:#24242491;
+    --accent: #F86A63;
+    --border:2px solid #3C3C3C;
+    --background-color: #171717;
+    --card-background-color: #242424;
+    --text-color: #F7F7F7;
+    --text-color-p: #838383;
+} 
+
+body{
+    cursor: pointer;
+    background-color: var(--background-color);
+    transition: background-color 0.4s ease, color 0.4s ease;   
+}
+ 
+#loading-screen{
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--ff);
+    font-size: 98px;
+    font-weight: 800;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--accent);
+    z-index: 999;
+    top: 0;
+  }
+
+  .loading-screen h5{
+    color: var(--background-color);
+    font-family: var(--manif);
+    font-size: 98px
+  }
+
+#mode-toggle{
+    cursor: default;
+    position: relative;    
+    background-color: var(--background-color);
+    border: var(--border);
+    width: 45px;
+    height: 45px;
+    font:var(--grot);
+    color: var(--text-color);
+    border-radius: 35px;
+}
+
+#mode-toggle.transition {    
+    transition: all .5s ease; /* Adjust the duration and easing as needed */
+  }
+
+.light-mode-icon{
+    background-color: var(--background-color);
+    border: var(--border);
+}
+
+.dark-mode-icon{
+    background-color: var(--background-color);
+    border: var(--border);
+}
+
+/* Tooltip text styles */
+#mode-toggle::after {
+    content: "Switch Modes";
+    position: absolute;
+    bottom: 100%;
+    right: 20%;
+    transform: translateX(50%);
+    transform: translateY(210%);
+    padding: 8px;
+    background-color: var(--card-background-color);
+    color: var(--text-color);
+    border: var(--border);
+    border-radius: 25px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+  }
+  
+  /* Show tooltip on hover */
+  #mode-toggle:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  
+
+header{
+        position: relative;
+        margin-top: 100px;
+      cursor: default;
+      height: 80vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+
+
+h1{
+    border: var(--border);
+    word-wrap: break-word;
+    width: auto;
+    position: relative;
+    font-size: 25rem;
+    letter-spacing: -1px;
+    font-family: var(--manif);
+    color: var(--text-color);
+}
+
+header h1::after{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    rotate: 10deg;
+    top: 35%;
+    left: 60%;
+    content: 'UI/UX Designers';
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: var(--accent);
+    transition: 500ms;
+}
+
+h1:hover::after{
+    transition: .5s;
+    rotate: 0deg;
+}
+
+h1:hover::before{
+    transition: .5s;
+    rotate: 0deg;
+}
+
+h1::before{
+    transition: .5s;
+    position: absolute;
+    rotate: -10deg;
+    top: 65%;
+    left: 10%;
+    content: 'Graphic Designers';
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: var(--accent);
+}
+
+header .box1{
+    background-color: var(--background-color);
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: var(--border);
+    top: -7px;
+    left: -7px;
+}
+header .box2{
+    background-color: var(--background-color);
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: var(--border);
+    top: -7px;
+    right: -7px;
+}
+header .box3{
+    background-color: var(--background-color);
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: var(--border);
+    bottom: -7px;
+    right: -7px;
+}
+header .box4{
+    background-color: var(--background-color);
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: var(--border);
+    bottom: -7px;
+    left: -7px;
+}
+
+
+p{
+    color: var(--text-color-p);
+}
+
+
+nav{
+    backdrop-filter: blur(25px);
+    z-index: 98;
+    position: fixed;
+    top: 0;
+    background-color: var(--nav-bg);
+    padding: 10px 50px 10px;
+    width:100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.logo{
+    transition: 500ms;
+    cursor: default;
+    fill: var(--text-color);
+}
+
+.card{
+    position: relative;
+    overflow: hidden;
+    gap: 15px;
+    transition: .5s;
+    background-color: var(--card-background-color);
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    width: 20vw;
+    height: 17vw;
+    border-radius: 25px;
+}
+
+.card:hover{
+    transition: .5s;
+    rotate: 2deg;
+}
+
+
+.glow{
+    transition: .5s;
+    position: absolute;
+    left: 0;
+    bottom: -100px;    
+}
+
+.card:hover .glow{
+    transition: .5s;
+    position: absolute;
+    left: 0;
+    bottom: -30px;    
+}
+
+h3{
+    font-family: var(--ff);
+    letter-spacing: -1px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+h2{
+ font-size: 1.3rem;
+ color: var(--text-color-p);
+ font-weight: 300;
+ letter-spacing: -2px;
+}
+
+.card-group{
+   padding: 60px 175px 60px;
+   width: 100vw;
+   gap: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+    /* background: linear-gradient(
+        45deg,
+        rgb(var(--purple)),
+        rgb(var(--pink)),
+        rgb(var(--orange)),
+        rgb(var(--yellow)),
+        rgb(var(--purple))       
+      ); */
+
+footer{
+    background-color: var(--nav-bg);
+    padding: 25px 145px;
+    display: flex;
+    flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+
+footer> h4{
+    
+    font-family: var(--manif);
+    font-size: 15px;
+    color: var(--text-color-p);
+}
+h4 .link{
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.icon-group{
+    scale: 110%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+
+}
+.icon-group a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+
+.color-group{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: -15px;
+
+}
+.dummy{
+    transition: .5s;
+    width:15px ;
+}
+
+
+.color-group:hover .dummy{
+    transition: .5s;
+    width:25px ;
+}
+
+.color1{
+    width: 24px;
+    height: 24px;
+    background-color: var(--accent);
+    border-radius: 125px;
+    border:3px solid var(--card-background-color);
+}
+.color2{
+    width: 24px;
+    height: 24px;
+    background-color: var(--text-color);
+    border-radius: 125px;
+    border:3px solid var(--card-background-color);
+}
+.color3{
+    width: 24px;
+    height: 24px;
+    background-color: var(--background-color);
+    border-radius: 125px;
+    border:3px solid var(--card-background-color);
+}
+.color4{
+    width: 24px;
+    height: 24px;
+    background-color: var(--card-background-color);
+    border-radius: 125px;
+    border:3px solid var(--card-background-color);
+}
+
+.dummy> .col{
+    transition: .5s;
+}
+
+.dummy> .col:hover{
+    transition: .5s;
+    scale: 125%;
+}
+
+
+.text{
+    color: var(--text-color-p);
+    font-size: 500px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: -10px;
+    font-family:var(--oswald) ;
+}
+
+
+.ribbon{
+    font-family: var(--ff);
+    text-transform: uppercase;
+    font-weight: 800;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 25px ;
+    background: linear-gradient(
+        45deg,
+        rgb(var(--purple)),
+        rgb(var(--pink)),
+        rgb(var(--orange)),
+        rgb(var(--yellow)),
+        rgb(var(--purple))       
+      );
+
+
+}
+
+.news_gsap { 
+    position: absolute;
+    rotate: 2deg;
+    margin: 60px 0px 60px;
+    padding: 0;
+    width: 100vw;
+    height: 50px;
+    background-color: var(--accent);
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.news_gsap2 { 
+    z-index: -1;
+    position: absolute;
+    rotate: -3deg;
+    margin: 60px 0px 60px;
+    padding: 0;
+    width: 100vw;
+    height: 50px;
+    background-color:var(--accent);
+    opacity: .3;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+li {
+    list-style: none;
+    margin: 0 .3em 0 0;
+    padding: 0;
+    display: inline-block;
+    font-family: var(--manif);
+    font-size:35px;
+    line-height: 50px;
+    vertical-align: center;
+    color: var(--text-color);
+}
+
+.section-3 > .news_gsap span {
+    color: var(--background-color);
+    vertical-align: center;
+    font-size: 35px;
+    display: inline-block;
+}
+
+.ticker-items,
+.ticker-wrapper {
+    display: inline-block;
+}
+/* This is so you can see how the looping is working */
+/* .ticker-items:nth-child(2) {
+    background: rgba(255, 255, 255, 0.25);
+} */
+
+.section-3{
+    height:25vh;
+    z-index: -99;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    padding: 60px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .slide {
+    background-size: contain;
+    height: 60vh;
+    border-radius: 20px;
+    margin: 10px;
+    cursor: pointer;
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    position: relative;
+    transition: all 500ms ease-in-out;
+  }
+  
+  .slide h3 {
+    color:var(--text-color);
+    position: absolute;
+    font-size: 12px;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+  }
+  
+  .slide.active {
+    flex: 10;
+  }
+  
+  .slide.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out 0.4s;
+  }
+ 
+.section-5{
+    overflow: hidden;
+    display: flex;
+    padding: 70px 140px 140px;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.section-5 > h2{
+    color: var(--text-color-p);
+    font-family: var(--manif);
+    font-size: 115px;
+    white-space: nowrap;
+    transition: 1s;
+}
+
+.section-5 > h2 a{
+    
+    border-bottom: 8px solid var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.section-5 h2:hover{
+    transition: 1s;
+    transform:translateX(-500px);
+}
+
+
+
+/* Mobile size 375px */
+
+@media screen and (max-width: 376px){
+   body{
+    cursor: none;
+    width: auto;
+    height: auto;
+   } 
+
+   .cursor{
+    visibility: hidden;
+}
+
+   nav{
+    padding: 10px 25px 10px;
+    width:100vw;
+   }
+
+   header{
+    height: 30vh;
+    padding: 150px;
+   }
+
+   h1{
+    font-size:10rem;
+   }
+
+   header h1::after{
+    font-size: 14px;
+    padding: 5px 12px 5px;;
+    }
+
+    h1::before{
+    font-size: 14px;
+    padding: 5px 12px 5px;
+    }
+
+    .card{
+        padding: 25px;
+        width:100%;
+        height: auto;
+    }
+
+    .card-group{
+        padding: 50px 25px;
+        width: 100vw;
+
+    }
+    .glow{
+        transition: .5s;
+        position: absolute;
+        left: 10px;
+        bottom: -100px;    
+    }
+
+    .card:hover .glow{
+        scale: 110%;
+        transition: .5s;
+        position: absolute;
+        left: 10px;
+        bottom: -30px;   
+    }
+
+    h2{
+        font-size: 20px;
+        letter-spacing: -1px;
+    }
+
+    footer{
+        padding: 30px 25px;
+        flex-direction: column-reverse;
+        gap: 25px;
+    }
+
+    .slide{
+        height: 20vh;
+        padding: 0px ;
+    }
+    .icon-group{
+        scale: 150%;
+    }
+
+    /* .section-5{
+        overflow: auto;
+        padding: 0px 20px 40px;
+    } */
+
+    .section-5 > h2{
+        font-size: 75px;
+    }
+
+    .section-5 h2:hover{
+        transition: 1s;
+        transform:translateX(-700px);
+    }
+}  
