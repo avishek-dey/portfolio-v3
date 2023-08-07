@@ -1,7 +1,7 @@
 /* font file */
 @font-face {
     font-family: 'Manifest';
-    src: url(/Font/Mafinest.otf);
+    src: url(Mafinest.otf);
 }
   @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;500;600;700&family=Oswald:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
